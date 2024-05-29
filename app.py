@@ -19,10 +19,8 @@ def start():
         place = request.form.get("place")
         vanNumber = request.form.get("vanNumber")
         cardID = request.form.get("cardID")
-        if book(id, name, city, place, vanNumber, cardID):                
-            return render_template('book.html', book_id=id)
-        else:
-            return "Error on Server"
+        book(id, name, city, place, vanNumber, cardID)                
+        return render_template('book.html', book_id=id)
     elif request.method == "POST" and  request.form.get("check"):
         elements = check(request.form.get("book_id").lower())
         return render_template('check.html', elements=elements)
