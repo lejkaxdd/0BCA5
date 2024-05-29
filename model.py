@@ -59,6 +59,7 @@ def check(id):
         sqliteConnection = sqlite3.connect('./db/data.db')
         
         # Oooh no SQL injection
+
         sqlite_select_query = f'''SELECT * FROM books WHERE id = '{id}';'''
         cursor = sqliteConnection.cursor()
         print("Successfully Connected to SQLite")
@@ -72,6 +73,7 @@ def check(id):
             elements.append(row[4])
             elements.append(row[5])
             data.append(elements)
+            elements = []   
         
         cursor.close()
         

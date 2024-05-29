@@ -1,4 +1,4 @@
-import sqlite3, uuid
+import uuid
 from flask import Flask, render_template, has_request_context, request, redirect #url_for, flash
 from model import *
 
@@ -8,10 +8,7 @@ app = Flask(__name__)
 
 
 @app.route("/", methods = ['GET', 'POST'] )
-def start():
-    
-    # operation = request.form.get()
-        
+def start():        
     if request.method == 'GET':
         return render_template('index.html')
     if request.method == 'POST' and request.form.get("book"):    
