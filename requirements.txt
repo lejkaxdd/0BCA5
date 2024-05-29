@@ -1,5 +1,1 @@
 Flask
-gunicorn==21.2.0
-sqlite3
-uuid
-re
