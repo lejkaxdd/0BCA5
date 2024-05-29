@@ -22,9 +22,10 @@ def create_table():
             print("SQLite table created")
 
             cursor.close()
-
+            return True
         except sqlite3.Error as error:
             print("Error while creating a sqlite table", error)
+            return False
         finally:
             if sqliteConnection:
                 sqliteConnection.close()
